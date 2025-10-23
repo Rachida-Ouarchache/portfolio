@@ -21,7 +21,7 @@ const Home = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-6xl font-extrabold text-darkbrown leading-tight">
-            I am <br />
+           je suis <br />
             <motion.span
               className="block text-transparent bg-clip-text bg-gradient-to-r from-darkbrown to-orange-600"
               initial={{ backgroundPosition: "200% 0%" }}

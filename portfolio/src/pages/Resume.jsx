@@ -7,8 +7,8 @@ const Resume = () => {
       <Navbar />
 
       <div className="max-w-5xl mx-auto px-6 py-16 text-darkbrown">
-        <h2 className="text-4xl font-bold mb-6">My CV</h2>
-        <p className="mb-4">You can view or download my resume below:</p>
+        <h2 className="text-4xl font-bold mb-6">Mon CV</h2>
+        <p className="mb-4">Vous pouvez consulter ou télécharger mon CV ci-dessous :</p>
 
         {/* bouton pour télécharger */}
         <a
@@ -16,7 +16,7 @@ const Resume = () => {
           download
           className="inline-block mb-6 px-6 py-2 bg-darkbrown text-white rounded-md hover:opacity-90"
         >
-          Download CV
+          Télécharger le CV
         </a>
 
         {/* intégration du PDF */}
@@ -33,3 +33,4 @@ const Resume = () => {
 };
 
 export default Resume;
+
