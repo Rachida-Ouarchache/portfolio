@@ -2,6 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen((s) => !s);
+  };
+
   return (
     <nav className="flex justify-between items-center py-6 px-8 md:px-16 bg-bgcream shadow-sm">
       {/* Logo + Nom */}
@@ -42,10 +49,46 @@ const Navbar = () => {
       </ul>
 
       {/* Menu mobile */}
-      <div className="md:hidden">
-        <button aria-label="menu" className="text-darkbrown text-2xl font-bold">
+      <div className="md:hidden relative">
+        <button
+          aria-label="menu"
+          aria-expanded={menuOpen}
+          onClick={handleMenuToggle}
+          className="text-darkbrown text-2xl font-bold"
+        >
           ☰
         </button>
+
+        <div
+          id="mobile-menu"
+          className={`absolute top-12 right-0 bg-white shadow-lg p-4 transition-transform transform origin-top-right ${
+            menuOpen ? "scale-100 opacity-100" : "scale-95 opacity-0 pointer-events-none"
+          }`}
+          style={{ minWidth: 160 }}
+        >
+          <ul className="flex flex-col gap-2">
+            <li>
+              <Link to="/" className="hover:text-gray-700 transition" onClick={() => setMenuOpen(false)}>
+                Accueil
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-gray-700 transition" onClick={() => setMenuOpen(false)}>
+                À propos
+              </Link>
+            </li>
+            <li>
+              <Link to="/resume" className="hover:text-gray-700 transition" onClick={() => setMenuOpen(false)}>
+                CV
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-gray-700 transition" onClick={() => setMenuOpen(false)}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
